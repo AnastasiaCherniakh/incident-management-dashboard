@@ -1,9 +1,8 @@
 import { useIncidents } from "../hooks/useIncidents"
+import IncidentTable from "../components/IncidentTable";
 
 /**
- * Dashboard page displaying all the incidents in a table.
- * This page reads incident data from the custom hook
- * and renders a simple overview for the user.
+ * Main dashboard page displaying incidents
  */
 
 export default function DashboardPage() {
@@ -15,32 +14,8 @@ export default function DashboardPage() {
 
             <h1>Incident Dashboard</h1>
 
-            <table>
+            <IncidentTable incidents={incidents}/>
 
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Severity</th>
-                        <th>Status</th>
-                        <th>Category</th>
-                        <th>Created</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {incidents.map((incident) => (
-                        <tr key={incident.id}>
-
-                            <td>{incident.title}</td>
-                            <td>{incident.severity}</td>
-                            <td>{incident.status}</td>
-                            <td>{incident.category}</td>
-                            <td>{new Date(incident.createdAt).toLocaleString()}</td>
-
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
         </div>
     )
 }
