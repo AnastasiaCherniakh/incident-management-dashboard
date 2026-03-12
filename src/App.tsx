@@ -1,9 +1,9 @@
 import './App.css'
-import ReportIncidentPage from './pages/ReportIncidentPage'
+import DashboardPage from './pages/DashboardPage'
 
 function App() {
 
-  return <ReportIncidentPage />
+  return <DashboardPage />
 
 }
 
