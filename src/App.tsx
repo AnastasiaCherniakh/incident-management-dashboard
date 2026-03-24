@@ -1,9 +1,26 @@
 import './App.css'
-import DashboardPage from './pages/DashboardPage'
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import DashboardPage from './pages/DashboardPage';
+import ReportIncidentPage from './pages/ReportIncidentPage';
 
 function App() {
 
-  return <DashboardPage />
+  return (
+    <BrowserRouter>
+
+      <nav>
+        <Link to="/">Dashboard</Link>
+        {" | "}
+        <Link to="/report">Report Incident</Link>
+      </nav>
+
+      <Routes>
+        <Route path='/'element={<DashboardPage />}/>
+        <Route path='/report'element={<ReportIncidentPage />}/>
+      </Routes>
+      
+    </BrowserRouter>
+  )
 
 }
 
