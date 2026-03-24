@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { useIncidents } from "../hooks/useIncidents"
 import IncidentTable from "../components/IncidentTable"
 import FilterControls from "../components/FilterControls"
@@ -33,6 +34,10 @@ export default function DashboardPage() {
         <div>
 
             <h1>Incident Dashboard</h1>
+
+            <Link to="/report">
+                <button>Add New Incident</button>
+            </Link>
 
             <FilterControls 
             severity={severityFilter}
