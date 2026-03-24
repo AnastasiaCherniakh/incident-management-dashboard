@@ -1,4 +1,4 @@
-import type { Incident } from "../types/incident"
+import type { Incident, Status } from "../types/incident"
 
 /**
  * Displays a single incident row inside the table
@@ -7,14 +7,26 @@ import type { Incident } from "../types/incident"
 
 type Props = {
     incident: Incident
+    onStatusChange: (id: string, status: Status) => void
 }
 
-export default function IncidentRow( { incident }: Props ) {
+export default function IncidentRow( { incident, onStatusChange }: Props ) {
     return (
         <tr>
             <td>{incident.title}</td>
             <td>{incident.severity}</td>
-            <td>{incident.status}</td>
+            <td>
+                <select
+                value={incident.status} 
+                onChange={(e) => 
+                    onStatusChange(incident.id, e.target.value as Status)
+                }
+                >
+                    <option value="open">Open</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="resolved">Resolved</option>
+                </select>
+            </td>
             <td>{incident.category}</td>
             <td>{new Date(incident.createdAt).toLocaleString()}</td>
         </tr>

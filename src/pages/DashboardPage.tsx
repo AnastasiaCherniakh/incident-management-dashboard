@@ -14,7 +14,7 @@ import type { Severity, Status } from "../types/incident"
 
 export default function DashboardPage() {
 
-    const { incidents } = useIncidents();
+    const { incidents, updateStatus } = useIncidents();
 
     const [severityFilter, setSeverityFilter] = useState<Severity | ''>('');
     const [statusFilter, setStatusFilter] = useState<Status | ''>('');
@@ -45,7 +45,10 @@ export default function DashboardPage() {
             sortBy={sortBy}
             onSortChange={setSortBy}/>
 
-            <IncidentTable incidents={sortedIncidents}/>
+            <IncidentTable 
+            incidents={sortedIncidents}
+            onStatusChange={updateStatus}
+            />
 
         </div>
     )

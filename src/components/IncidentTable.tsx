@@ -1,4 +1,4 @@
-import type { Incident } from "../types/incident"
+import type { Incident, Status } from "../types/incident"
 import IncidentRow from "./IncidentRow"
 
 /**
@@ -8,9 +8,10 @@ import IncidentRow from "./IncidentRow"
 
 type Props = {
     incidents: Incident[]
+    onStatusChange: (id: string, status: Status) => void
 }
 
-export default function IncidentTable({ incidents }: Props){
+export default function IncidentTable({ incidents, onStatusChange }: Props){
     return (
         <table>
 
@@ -28,7 +29,8 @@ export default function IncidentTable({ incidents }: Props){
                 {incidents.map((incident) => (
                     <IncidentRow 
                     key={incident.id}
-                    incident={incident}/>
+                    incident={incident}
+                    onStatusChange={onStatusChange}/>
                     ))}
             </tbody>
         </table>
