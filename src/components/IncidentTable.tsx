@@ -26,12 +26,20 @@ export default function IncidentTable({ incidents, onStatusChange }: Props){
             </thead>
 
             <tbody>
-                {incidents.map((incident) => (
-                    <IncidentRow 
-                    key={incident.id}
-                    incident={incident}
-                    onStatusChange={onStatusChange}/>
-                    ))}
+                {incidents.length === 0 ? (
+                    <tr>
+                        <td colSpan={5}>No incidents found</td>
+                    </tr>
+                ) : (
+                    incidents.map((incident) => (
+                        <IncidentRow 
+                        key={incident.id}
+                        incident={incident}
+                        onStatusChange={onStatusChange}
+                        />
+                    ))
+                )}
+                
             </tbody>
         </table>
     )
