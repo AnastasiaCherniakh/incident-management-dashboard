@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { Incident, Status } from "../types/incident";
-import { getIncidents, saveIncidents } from "../services/incidentStorage";
+import { getIncidents, saveIncidents, updateIncidentStatus } from "../services/incidentStorage";
 import type { IncidentInput } from "../utils/validateIncident";
 
 /**
@@ -33,18 +33,17 @@ export function useIncidents() {
         saveIncidents(updatedIncidents);
     }
 
-    function updateIncidentStatus(id: string, status: Status) {
-        const updatedIncidents = incidents.map((incident) =>
-            incident.id === id ? { ...incident, status } : incident
-        );
-
-        setIncidents(updatedIncidents);
-        saveIncidents(updatedIncidents);
+/**
+ * Updates incident status and syncs state with storage.
+ */
+    function updateStatus(id: string, status: Status) {
+        const updated = updateIncidentStatus(id, status)
+        setIncidents(updated);
     }
 
     return {
         incidents,
         addIncident,
-        updateIncidentStatus
+        updateStatus
     }
 }
