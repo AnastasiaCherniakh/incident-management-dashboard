@@ -28,6 +28,8 @@ export default function IncidentForm({ onSubmit }: Props) {
     const [formData, setFormData] = useState<FormData>(initialForm);
     // Stores validation error messages for each field
     const [errors, setErrors] = useState<Record<string, string>>({});
+    // Stores message of a successful submission for the user
+    const [success, setSuccess] = useState("");
 
     // Updates the corresponding field in FormData when the user types or selects a value
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
@@ -38,6 +40,9 @@ export default function IncidentForm({ onSubmit }: Props) {
             ...prev,
             [name]: value
         }));
+
+        // Reset success message
+        setSuccess("");
     }
 
     
@@ -54,6 +59,8 @@ export default function IncidentForm({ onSubmit }: Props) {
         }
 
         onSubmit(formData);
+        // User feedback about successful submission
+        setSuccess("Incident created successfully");
 
         // Reset form fields and error messages after successful submission
         setFormData(initialForm);
@@ -64,6 +71,9 @@ export default function IncidentForm({ onSubmit }: Props) {
     return (
         <form onSubmit={handleSubmit}>
             <div>
+                {success && (
+                    <p>{success}</p>
+                )}
                 <label>Title</label>
                 <input
                 name="title"
@@ -116,7 +126,11 @@ export default function IncidentForm({ onSubmit }: Props) {
                 {errors.category && <p>{errors.category}</p>}
             </div>
 
-            <button type="submit">Report Incident</button>
+            <button 
+            type="submit"
+            disabled={!formData.title || !formData.severity || !formData.category}
+            >Report Incident
+            </button>
         </form>
     )
 }
