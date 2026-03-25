@@ -31,24 +31,28 @@ export default function DashboardPage() {
     const sortedIncidents = sortIncidents(filteredIncidents, sortBy); 
 
     return (
-        <div>
+        <div className="dashboard">
 
             <h1>Incident Dashboard</h1>
 
-            <Link to="/report">
-                <button>Add New Incident</button>
-            </Link>
+            <div className="dashboard-actions">
+                <Link to="/report">
+                    <button>Add New Incident</button>
+                </Link>
+            </div>
 
-            <FilterControls 
-            severity={severityFilter}
-            status={statusFilter}
-            onSeverityChange={setSeverityFilter}
-            onStatusChange={setStatusFilter}
-            />
+            <div className="controls">
+                <FilterControls 
+                severity={severityFilter}
+                status={statusFilter}
+                onSeverityChange={setSeverityFilter}
+                onStatusChange={setStatusFilter}
+                />
 
-            <SortControls 
-            sortBy={sortBy}
-            onSortChange={setSortBy}/>
+                <SortControls 
+                sortBy={sortBy}
+                onSortChange={setSortBy}/>
+            </div>
 
             <IncidentTable 
             incidents={sortedIncidents}

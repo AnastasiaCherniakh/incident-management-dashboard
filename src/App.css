@@ -79,3 +79,14 @@ label {
 form > div {
   margin-bottom: 16px;
 }
+
+.dashboard-actions {
+  margin-bottom: 16px;
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
