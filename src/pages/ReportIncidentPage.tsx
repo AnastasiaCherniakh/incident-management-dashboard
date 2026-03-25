@@ -14,7 +14,7 @@ export default function ReportIncidentPage() {
             
             <div className="form-header">
                 <Link to="/">
-                    <button>Back to Dashboard</button>
+                    <button className="button-secondary">← Back to Dashboard</button>
                 </Link>
             </div>
 

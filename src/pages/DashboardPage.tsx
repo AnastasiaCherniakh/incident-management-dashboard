@@ -37,7 +37,7 @@ export default function DashboardPage() {
 
             <div className="dashboard-actions">
                 <Link to="/report">
-                    <button>Add New Incident</button>
+                    <button className="button-primary">Add New Incident</button>
                 </Link>
             </div>
 
