@@ -9,12 +9,18 @@ export default function ReportIncidentPage() {
     const { addIncident } = useIncidents();
 
     return (
-        <div>
+        <div className="form-page">
             <h1>Report Incident</h1>
-            <Link to="/">
-                <button>Back to Dashboard</button>
-            </Link>
-            <IncidentForm onSubmit={addIncident} />
+            
+            <div className="form-header">
+                <Link to="/">
+                    <button>Back to Dashboard</button>
+                </Link>
+            </div>
+
+            <div className="form-wrapper">
+                <IncidentForm onSubmit={addIncident} />
+            </div>
         </div>
     )
 }

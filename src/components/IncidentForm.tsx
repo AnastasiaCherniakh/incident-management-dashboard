@@ -69,7 +69,7 @@ export default function IncidentForm({ onSubmit }: Props) {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="incident-form">
             <div>
                 {success && (
                     <p>{success}</p>
