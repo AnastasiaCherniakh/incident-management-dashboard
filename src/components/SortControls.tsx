@@ -20,7 +20,7 @@ export default function SortControls({ sortBy, onSortChange }: Props){
             onChange={(e) => onSortChange(e.target.value as SortOption)}>
                 <option value="date-desc">Newest First</option>
                 <option value="date-asc">Oldest First</option>
-                <option value="severity-decs">Highest Severity</option>
+                <option value="severity-desc">Highest Severity</option>
                 <option value="severity-asc">Lowest Severity</option>
             </select>
 
