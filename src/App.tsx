@@ -8,16 +8,21 @@ function App() {
   return (
     <BrowserRouter>
 
-      <nav>
-        <Link to="/">Dashboard</Link>
-        {" | "}
-        <Link to="/report">Report Incident</Link>
-      </nav>
+      <div className="app-container">
 
-      <Routes>
-        <Route path='/'element={<DashboardPage />}/>
-        <Route path='/report'element={<ReportIncidentPage />}/>
-      </Routes>
+        <nav className='navbar'>
+          <Link to="/">Dashboard</Link>
+          <Link to="/report">Report Incident</Link>
+        </nav>
+
+        <main className='main-content'>
+          <Routes>
+            <Route path='/'element={<DashboardPage />}/>
+            <Route path='/report'element={<ReportIncidentPage />}/>
+          </Routes>
+        </main>
+
+      </div>
       
     </BrowserRouter>
   )
