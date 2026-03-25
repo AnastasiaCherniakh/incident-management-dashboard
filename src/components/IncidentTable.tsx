@@ -13,7 +13,7 @@ type Props = {
 
 export default function IncidentTable({ incidents, onStatusChange }: Props){
     return (
-        <table>
+        <table className="incident-table">
 
             <thead>
                 <tr>
