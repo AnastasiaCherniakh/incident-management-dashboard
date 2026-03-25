@@ -20,30 +20,34 @@ export default function FilterControls({
 }: Props) {
 
     return (
-        <div>
+        <div className="filter-group">
 
-            <label>Severity</label>
-            <select 
-            value={severity}
-            onChange={(e) => onSeverityChange(e.target.value as Severity | "")}
-            >
-                <option value=''>All</option>
-                <option value='low'>Low</option>
-                <option value='medium'>Medium</option>
-                <option value='high'>High</option>
-                <option value='critical'>Critical</option>
-            </select>
+            <div className="control">
+                <label>Severity</label>
+                <select 
+                value={severity}
+                onChange={(e) => onSeverityChange(e.target.value as Severity | "")}
+                >
+                    <option value=''>All</option>
+                    <option value='low'>Low</option>
+                    <option value='medium'>Medium</option>
+                    <option value='high'>High</option>
+                    <option value='critical'>Critical</option>
+                </select>
+            </div>
 
-            <label>Status</label>
-            <select 
-            value={status}
-            onChange={(e) => onStatusChange(e.target.value as Status | "")}
-            >
-                <option value=''>All</option>
-                <option value='open'>Open</option>
-                <option value='in-progress'>In progress</option>
-                <option value='resolved'>Resolved</option>
-            </select>
+            <div className="control">
+                <label>Status</label>
+                <select 
+                value={status}
+                onChange={(e) => onStatusChange(e.target.value as Status | "")}
+                >
+                    <option value=''>All</option>
+                    <option value='open'>Open</option>
+                    <option value='in-progress'>In progress</option>
+                    <option value='resolved'>Resolved</option>
+                </select>
+            </div>
         </div>
     )
 

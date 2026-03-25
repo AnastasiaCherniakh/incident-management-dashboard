@@ -11,7 +11,7 @@ type Props = {
 
 export default function SortControls({ sortBy, onSortChange }: Props){
     return (
-        <div>
+        <div className="control">
 
             <label>Sort By</label>
 
