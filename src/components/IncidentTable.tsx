@@ -13,34 +13,36 @@ type Props = {
 
 export default function IncidentTable({ incidents, onStatusChange }: Props){
     return (
-        <table className="incident-table">
+        <div className="table-wrapper">
+            <table className="incident-table">
 
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Severity</th>
-                    <th>Status</th>
-                    <th>Category</th>
-                    <th>Created</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                {incidents.length === 0 ? (
+                <thead>
                     <tr>
-                        <td colSpan={5}>No incidents found</td> {/* Show message when table is empty */}
+                        <th>Title</th>
+                        <th>Severity</th>
+                        <th>Status</th>
+                        <th>Category</th>
+                        <th>Created</th>
                     </tr>
-                ) : (
-                    incidents.map((incident) => (
-                        <IncidentRow 
-                        key={incident.id}
-                        incident={incident}
-                        onStatusChange={onStatusChange}
-                        />
-                    ))
-                )}
-                
-            </tbody>
-        </table>
+                </thead>
+
+                <tbody>
+                    {incidents.length === 0 ? (
+                        <tr>
+                            <td colSpan={5}>No incidents found</td> {/* Show message when table is empty */}
+                        </tr>
+                    ) : (
+                        incidents.map((incident) => (
+                            <IncidentRow 
+                            key={incident.id}
+                            incident={incident}
+                            onStatusChange={onStatusChange}
+                            />
+                        ))
+                    )}
+                    
+                </tbody>
+            </table>
+        </div>
     )
 }
