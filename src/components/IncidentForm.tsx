@@ -128,7 +128,7 @@ export default function IncidentForm({ onSubmit }: Props) {
 
             <button 
             type="submit"
-            disabled={!formData.title || !formData.severity || !formData.category}
+            disabled={!formData.title || !formData.severity || !formData.category} //disable submit if required fields are empty
             >Report Incident
             </button>
         </form>

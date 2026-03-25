@@ -6,7 +6,7 @@ export type SortOption =
     | "date-asc"
     | "date-desc"
     | "severity-asc"
-    | "severity-decs"
+    | "severity-desc"
 
 /** 
  * Maps severity levels to numeric values for sorting.
@@ -37,7 +37,7 @@ export function sortIncidents(
                 return b.createdAt - a.createdAt
             case "severity-asc":
                 return severityOrder[a.severity] - severityOrder[b.severity]
-            case "severity-decs":
+            case "severity-desc":
                 return severityOrder[b.severity] - severityOrder[a.severity]
             default:
                 return 0

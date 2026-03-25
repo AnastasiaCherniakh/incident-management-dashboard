@@ -28,7 +28,7 @@ export default function IncidentTable({ incidents, onStatusChange }: Props){
             <tbody>
                 {incidents.length === 0 ? (
                     <tr>
-                        <td colSpan={5}>No incidents found</td>
+                        <td colSpan={5}>No incidents found</td> {/* Show message when table is empty */}
                     </tr>
                 ) : (
                     incidents.map((incident) => (
