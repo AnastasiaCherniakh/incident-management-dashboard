@@ -27,10 +27,11 @@ export function useIncidents() {
             createdAt: Date.now()
         }
 
-        const updatedIncidents = [...incidents, newIncident];
-
-        setIncidents(updatedIncidents);
-        saveIncidents(updatedIncidents);
+        setIncidents(prev => {
+            const updated = [...prev, newIncident];
+            saveIncidents(updated);
+            return updated;
+        });
     }
 
 /**

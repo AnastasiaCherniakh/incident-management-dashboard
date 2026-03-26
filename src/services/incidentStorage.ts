@@ -1,20 +1,32 @@
 import type { Incident, Status } from "../types/incident";
+import { mockIncidents } from "../data/mockIncidents";
 
 // Centralized key for LocalStorage to avoid repeating string literals
 const STORAGE_KEY = 'incidents';
 
 /**
  * Retrieves incidents from LocalStorage.
- * Returns an empty array if no incidents exist yet.
+ * Returns mock data if no incidents exist yet.
  */
 export function getIncidents(): Incident[] {
     const data = localStorage.getItem(STORAGE_KEY);
     
     if(!data){
-        return [];
+        // First visit -> just mock data
+        return mockIncidents;
     }
 
-    return JSON.parse(data) as Incident[];
+    const stored = JSON.parse(data) as Incident[];
+
+    // Merge mock + stored
+    const merged = [...mockIncidents, ...stored];
+
+    const unique = merged.filter(
+        (incident, index, self) =>
+            index === self.findIndex(i => i.id === incident.id)
+    );
+
+    return unique;
 }
 
 /**
@@ -38,7 +50,7 @@ export function updateIncidentStatus(
     const incidents = getIncidents();
 
     const updated = incidents.map((incident) => 
-    incident.id == id
+    incident.id === id
         ? { ...incident, status: newStatus }
         : incident
     );
