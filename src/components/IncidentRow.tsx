@@ -1,4 +1,5 @@
 import type { Incident, Status } from "../types/incident"
+import SeverityBadge from "./SeverityBadge"
 
 /**
  * Displays a single incident row inside the table
@@ -14,7 +15,9 @@ export default function IncidentRow( { incident, onStatusChange }: Props ) {
     return (
         <tr>
             <td>{incident.title}</td>
-            <td>{incident.severity}</td>
+            <td>
+                <SeverityBadge severity={incident.severity} />
+            </td>
             <td>
                 <select
                 value={incident.status} 

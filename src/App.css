@@ -208,6 +208,35 @@ form > div {
   text-align: center;
 }
 
+.badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.badge-low {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.badge-medium {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.badge-high {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-critical {
+  background-color: #dc2626;
+  color: white;
+}
+
+
 
 @media (max-width: 600px) {
   .app-container {
@@ -263,6 +292,4 @@ form > div {
     padding: 4px;
     font-size: 12px;
   }
-
-
 }
