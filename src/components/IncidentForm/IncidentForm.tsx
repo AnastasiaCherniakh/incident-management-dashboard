@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { validateIncident } from "../utils/validateIncident";
+import { validateIncident } from "../../utils/validateIncident";
+import './IncidentForm.css';
 
 // Represent the data collected from the form before it becomes the full incident
 type FormData = {

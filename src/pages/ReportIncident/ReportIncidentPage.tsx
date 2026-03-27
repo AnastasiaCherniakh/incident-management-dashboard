@@ -1,6 +1,7 @@
-import { useIncidents } from "../hooks/useIncidents";
+import { useIncidents } from "../../hooks/useIncidents";
 import { Link } from "react-router-dom";
-import IncidentForm  from '../components/IncidentForm';
+import IncidentForm  from '../../components/IncidentForm/IncidentForm';
+import './ReportIncident.css';
 
 // Page responsible for connecting the incident form to the incident management hook
 

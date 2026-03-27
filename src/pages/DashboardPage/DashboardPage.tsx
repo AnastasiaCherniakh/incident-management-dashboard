@@ -1,15 +1,16 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { useIncidents } from "../hooks/useIncidents"
-import IncidentTable from "../components/IncidentTable"
-import FilterControls from "../components/FilterControls"
-import SortControls from "../components/SortControls"
-import SummaryCard from "../components/SummaryCard"
-import { filterIncidents } from "../utils/filterIncidents"
-import { sortIncidents } from "../utils/sortIncidents"
-import type { SortOption } from "../utils/sortIncidents"
-import type { Severity, Status } from "../types/incident"
-import { getIncidentStats } from "../utils/incidentStats"
+import { useIncidents } from "../../hooks/useIncidents"
+import IncidentTable from "../../components/IncidentTable/IncidentTable"
+import FilterControls from "../../components/FilterControls/FilterControls"
+import SortControls from "../../components/SortControls"
+import SummaryCard from "../../components/SummaryCard/SummaryCard"
+import { filterIncidents } from "../../utils/filterIncidents"
+import { sortIncidents } from "../../utils/sortIncidents"
+import type { SortOption } from "../../utils/sortIncidents"
+import type { Severity, Status } from "../../types/incident"
+import { getIncidentStats } from "../../utils/incidentStats"
+import './DashboardPage.css'
 
 /**
  * Main dashboard page displaying incidents

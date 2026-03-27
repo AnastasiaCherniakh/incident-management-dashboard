@@ -1,5 +1,6 @@
-import type { Incident, Status } from "../types/incident"
-import IncidentRow from "./IncidentRow"
+import type { Incident, Status } from "../../types/incident"
+import IncidentRow from "../IncidentRow"
+import './IncidentTable.css'
 
 /**
  * Table component responsible for displaying

@@ -1,3 +1,4 @@
+import './SummaryCard.css';
 
 type Variant = 'neutral' | 'warning' | 'danger';
 

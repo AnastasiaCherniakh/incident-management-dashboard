@@ -1,0 +1,30 @@
+.dashboard-actions {
+  margin-bottom: 24px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.summary-cards {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .summary-cards {
+    gap: 10px;
+  }
+  
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

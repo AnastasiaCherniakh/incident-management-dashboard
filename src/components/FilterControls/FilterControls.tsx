@@ -1,4 +1,5 @@
-import type { Severity, Status } from "../types/incident"
+import type { Severity, Status } from "../../types/incident"
+import './FilterControls.css'
 
 /**
  * UI controls allowing users to filter incidents

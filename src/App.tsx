@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
-import DashboardPage from './pages/DashboardPage';
-import ReportIncidentPage from './pages/ReportIncidentPage';
+import DashboardPage from './pages/DashboardPage/DashboardPage';
+import ReportIncidentPage from './pages/ReportIncident/ReportIncidentPage';
 
 function App() {
 

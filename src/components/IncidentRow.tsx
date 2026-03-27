@@ -1,5 +1,5 @@
 import type { Incident, Status } from "../types/incident"
-import SeverityBadge from "./SeverityBadge"
+import SeverityBadge from "./SeverityBadge/SeverityBadge"
 
 /**
  * Displays a single incident row inside the table

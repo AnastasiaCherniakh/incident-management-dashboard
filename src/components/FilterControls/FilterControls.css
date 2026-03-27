@@ -1,0 +1,44 @@
+.filter-group {
+  display: flex;
+  gap: 12px;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  width: 160px;
+}
+
+.control label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+.control select {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .filter-group {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .control {
+    width: 130px;
+  }
+
+  .control label {
+    font-size: 12px;
+  }
+
+  .control select {
+    padding: 6px;
+    font-size: 13px;
+  }
+}

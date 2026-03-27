@@ -1,4 +1,5 @@
-import type { Severity } from "../types/incident";
+import type { Severity } from "../../types/incident";
+import './SeverityBadge.css';
 
 interface Props {
     severity: Severity;
