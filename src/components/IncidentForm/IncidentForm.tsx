@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { validateIncident } from "../../utils/validateIncident";
+import type { Severity, Category } from "../../types/incident";
 import './IncidentForm.css';
 
 // Represent the data collected from the form before it becomes the full incident
 type FormData = {
     title: string
     description: string
-    severity: string
-    category: string
+    severity: Severity | ''
+    category: Category | ''
 };
 
 // Function passed from the parent component that will handle incident creation 

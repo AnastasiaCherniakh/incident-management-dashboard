@@ -1,3 +1,5 @@
+import type { Severity, Category } from "../types/incident"
+
 export type IncidentValidationErrors = {
     title?: string
     description?: string
@@ -8,8 +10,8 @@ export type IncidentValidationErrors = {
 export type IncidentInput = {
     title: string
     description: string
-    severity: string
-    category: string
+    severity: Severity | ''
+    category: Category | ''
 }
 
 /**
