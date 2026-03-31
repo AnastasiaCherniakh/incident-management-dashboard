@@ -74,7 +74,7 @@ export default function IncidentForm({ onSubmit }: Props) {
         <form onSubmit={handleSubmit} className="incident-form">
             <div>
                 {success && (
-                    <p>{success}</p>
+                    <p className="message-success">{success}</p>
                 )}
                 <label htmlFor="title">Title</label>
                 <input
@@ -83,7 +83,7 @@ export default function IncidentForm({ onSubmit }: Props) {
                 onChange={handleChange}
                 id="title"
                 />
-                {errors.title && <p>{errors.title}</p>}
+                {errors.title && <p className="message-error">{errors.title}</p>}
             </div>
 
             <div>
@@ -94,7 +94,7 @@ export default function IncidentForm({ onSubmit }: Props) {
                 onChange={handleChange}
                 id="description"
                 />
-                {errors.description && <p>{errors.description}</p>}
+                {errors.description && <p className="message-error">{errors.description}</p>}
             </div>
 
             <div>
@@ -111,7 +111,7 @@ export default function IncidentForm({ onSubmit }: Props) {
                 <option value="high">High</option>
                 <option value="critical">Critical</option>
                 </select>
-                {errors.severity && <p>{errors.severity}</p>}
+                {errors.severity && <p className="message-error">{errors.severity}</p>}
             </div>
 
             <div>
@@ -129,7 +129,7 @@ export default function IncidentForm({ onSubmit }: Props) {
                 <option value="database">Database</option>
                 <option value="security">Security</option>
                 </select>
-                {errors.category && <p>{errors.category}</p>}
+                {errors.category && <p className="message-error">{errors.category}</p>}
             </div>
 
             <button 
