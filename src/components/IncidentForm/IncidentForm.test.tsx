@@ -31,5 +31,21 @@ describe("IncidentForm", () => {
         await userEvent.click(screen.getByText(/report incident/i));
 
         expect(handleSubmit).toHaveBeenCalled();
-    })
+    });
+
+    it("shows success message after submission", async () => {
+        render(<IncidentForm onSubmit={vi.fn()} />);
+
+        await userEvent.type(screen.getByLabelText(/title/i), "Server down");
+        await userEvent.type(
+            screen.getByLabelText(/description/i),
+            "Server is not responding properly"
+        );
+
+        await userEvent.selectOptions(screen.getByLabelText(/severity/i), "high");
+        await userEvent.selectOptions(screen.getByLabelText(/category/i), "backend");
+        await userEvent.click(screen.getByText(/report incident/i));
+
+        expect(screen.getByText(/incident created successfully/i)).toBeInTheDocument();
+    });
 });
