@@ -75,31 +75,34 @@ export default function IncidentForm({ onSubmit }: Props) {
                 {success && (
                     <p>{success}</p>
                 )}
-                <label>Title</label>
+                <label htmlFor="title">Title</label>
                 <input
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
+                id="title"
                 />
                 {errors.title && <p>{errors.title}</p>}
             </div>
 
             <div>
-                <label>Description</label>
+                <label htmlFor="description">Description</label>
                 <input
                 name="description"
                 value={formData.description}
                 onChange={handleChange}
+                id="description"
                 />
                 {errors.description && <p>{errors.description}</p>}
             </div>
 
             <div>
-                <label>Severity</label>
+                <label htmlFor="severity">Severity</label>
                 <select
                 name="severity"
                 value={formData.severity}
                 onChange={handleChange}
+                id="severity"
                 >
                 <option value="">Select Severity</option>
                 <option value="low">Low</option>
@@ -111,11 +114,12 @@ export default function IncidentForm({ onSubmit }: Props) {
             </div>
 
             <div>
-                <label>Category</label>
+                <label htmlFor="category">Category</label>
                 <select
                 name="category"
                 value={formData.category}
                 onChange={handleChange}
+                id="category"
                 >
                 <option value="">Select Category</option>
                 <option value="frontend">Frontend</option>
