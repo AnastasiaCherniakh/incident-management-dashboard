@@ -1,5 +1,6 @@
 import type { Incident, Status } from "../types/incident"
 import SeverityBadge from "./SeverityBadge/SeverityBadge"
+import { formatDate } from "../utils/formatDate"
 
 /**
  * Displays a single incident row inside the table
@@ -31,7 +32,7 @@ export default function IncidentRow( { incident, onStatusChange }: Props ) {
                 </select>
             </td>
             <td>{incident.category}</td>
-            <td>{new Date(incident.createdAt).toLocaleString()}</td>
+            <td>{formatDate(incident.createdAt)}</td>
         </tr>
     )
 }
